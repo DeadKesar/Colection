@@ -10,6 +10,8 @@ namespace Collections_2_
     {
         static void Main(string[] args)
         {
+            List<int> list = new List<int>() { 1, 2, 3, 4, 5, 6, 7 };
+            //list.Add((object)"str");//do not work
         }
     }
 }
