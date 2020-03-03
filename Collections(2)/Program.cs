@@ -17,7 +17,26 @@ namespace Collections_2_
             {
                 Console.WriteLine(a);
             }
+            Console.WriteLine(new string('-',30));
+            var arr = myList.GetArray();
+            foreach ( var a in arr)
+                Console.WriteLine(a);
             Console.ReadLine();
+        }
+
+    }
+    public static class Helper
+    {
+        public static T[] GetArray<T>(this IEnumerable<T> list)
+        {
+            int i = 0;
+            T[] temp = new T[list.Count()];
+            foreach (var a in list)
+            {
+                temp[i] = a;
+                i++;
+            }
+            return temp;
         }
     }
 }
