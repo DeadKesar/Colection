@@ -10,11 +10,15 @@ using System.Threading.Tasks;
 
 namespace Collections_2_
 {
-    class MyList<T> : IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable, IList
+    class MyList<T> : IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable, IList, ICollection, IReadOnlyList<T>, IReadOnlyCollection<T>
     {
+        
        
         T[] Collection;
-
+        public MyList()
+        {
+            Collection = new T[0];
+        }
         public int Count
         { get { if (Collection != null)
                     return Collection.Length;
@@ -114,7 +118,7 @@ namespace Collections_2_
         {
             T[] temp = new T[Collection.Length + 1];
             Array.Copy(this.Collection, 0, temp, 0, Collection.Length);
-            temp[temp.Length] = item;
+            temp[temp.Length-1] = item;
             this.Collection = temp;
         }
 
